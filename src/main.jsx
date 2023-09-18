@@ -7,20 +7,19 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import SingleTitlePage from './pages/SingleTitlePage';
 import TitlePage from './pages/TitlePage';
 import Nav from "./components/Nav.jsx"
-import DescriptionPage from './pages/DescriptionPage';
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-<BrowserRouter>
-<Provider store={store}>
-  <Nav>
+  <BrowserRouter>
+  <Provider store={store}>
+  <Nav/>
+  <TitlePage/>
   <Routes>
-    <Route path={'/'} element={<TitlePage/>}/>
-    <Route path={'/title/:id'} element={<SingleTitlePage/>}/>
-    <Route path={'/description'} element={<DescriptionPage/>}/>
+    <Route index element={<TitlePage/>}/>
+    <Route path='/title/:id' element={<SingleTitlePage/>}/>
   </Routes>
-  </Nav>
-</Provider>
-</BrowserRouter>
+  </Provider>
+  </BrowserRouter>
   </React.StrictMode>,
 )

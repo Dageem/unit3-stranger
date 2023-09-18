@@ -1,13 +1,17 @@
 import { useParams } from "react-router-dom"
+import { useGetStrangerByTitleQuery } from "../reducers/Strangers"
 
 function SingleTitlePage(){
-    
-    const params=useParams();
+    const params= useParams
+    const {data, error, isLoading}= useGetStrangerByTitleQuery(params.id);
     
     return (
-        <>
-            <h1>Page {params.id}</h1>
-        </>
+        <div>
+            {isLoading?<h1>Loading....</h1>:<>
+            <h1>{data.title}</h1>
+            <h2>{data.description}</h2>
+            </>}
+        </div>
     )
 }
 
