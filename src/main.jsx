@@ -4,8 +4,8 @@ import './index.css';
 import { Provider } from 'react-redux';
 import store from './store.js';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import SingleTitlePage from './pages/SingleTitlePage';
-import TitlePage from './pages/TitlePage';
+import SinglePostPage from './pages/SinglePostPage';
+import AllPostsPage from './pages/AllPostsPage';
 import Nav from "./components/Nav.jsx"
 
 
@@ -14,10 +14,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
   <Provider store={store}>
   <Nav/>
-  <TitlePage/>
   <Routes>
-    <Route index element={<TitlePage/>}/>
-    <Route path='/title/:id' element={<SingleTitlePage/>}/>
+    <Route index element={<AllPostsPage/>}/>
+    <Route path='/:id' element={<SinglePostPage/>}/>
   </Routes>
   </Provider>
   </BrowserRouter>

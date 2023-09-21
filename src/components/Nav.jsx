@@ -4,8 +4,8 @@ function Nav(){
     return(
         <nav>
             <Link to={"/"}>Home</Link>
-            <Link to={"/title"}>Title</Link>
-            <Link to={"/description"}>Description</Link>
+            <Link to={"/:id"}>SinglePost</Link>
+            
         </nav>
     )
 }
